@@ -1,7 +1,7 @@
 node{
     try{
    stage('Checkout'){
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shivprasadgit/Hello-World.git']]])
+       checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitcorrect', url: 'https://github.com/SalmanQureshi-Web/Hello-World.git']])
       
    }
      stage('Sonar Analysis'){
